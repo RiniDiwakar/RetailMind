@@ -1,0 +1,29 @@
+venv/
+**/venv/
+
+__pycache__/
+**/__pycache__/
+
+.pytest_cache/
+**/.pytest_cache/
+
+*.pyc
+*.pyo
+*.log
+.env
+
+# Datasets
+data/**/*.csv
+data/**/*.xlsx
+
+# Backend generated/uploaded files
+backend/uploads/
+**/*.db
+
+# Temporary frontend test data
+frontend/js/test-customers.csv
+backend/retailmind_invalid_amount.csv
+backend/retailmind_invalid_login.csv
+backend/test.txt
+backend/test_data.csv
+backend/test_ml_data.csv

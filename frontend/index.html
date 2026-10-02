@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RetailMind</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <aside class="sidebar">
+
+        <h2>RetailMind</h2>
+
+        <nav>
+
+            <a href="#dashboard">
+                Dashboard
+            </a>
+
+            <a href="#upload">
+                Upload Dataset
+            </a>
+
+            <a href="#segmentation">
+                Segmentation
+            </a>
+
+            <a href="#churn">
+                Churn Prediction
+            </a>
+
+            <a href="#nba">
+                Next Best Action
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <main class="main-content" id="dashboard">
+
+        <header class="top-header">
+
+            <h1>Dashboard</h1>
+
+        </header>
+
+
+        <section class="content">
+
+
+            <!-- ==========================================
+                 WELCOME
+                 ========================================== -->
+
+            <div class="welcome-section">
+
+                <h2>
+                    Welcome to RetailMind
+                </h2>
+
+                <p>
+                    Predict. Understand. Personalize.
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+                 KPI CARDS
+                 ========================================== -->
+
+            <div class="kpi-grid">
+
+                <div class="kpi-card">
+
+                    <p class="kpi-title">
+                        Total Customers
+                    </p>
+
+                    <h3 id="totalCustomers">
+                        0
+                    </h3>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <p class="kpi-title">
+                        Total Transactions
+                    </p>
+
+                    <h3 id="totalTransactions">
+                        0
+                    </h3>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <p class="kpi-title">
+                        Total Revenue
+                    </p>
+
+                    <h3 id="totalRevenue">
+                        ₹0
+                    </h3>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <p class="kpi-title">
+                        At-Risk Customers
+                    </p>
+
+                    <h3 id="atRiskCustomers">
+                        Awaiting analysis
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 CUSTOMER OVERVIEW
+                 ========================================== -->
+
+            <div class="customer-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Customer Overview
+                    </h2>
+
+                    <p>
+                        View customer transaction details from the uploaded dataset.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="customerEmpty"
+                    class="empty-state"
+                >
+
+                    <strong>
+                        No dataset analyzed yet
+                    </strong>
+
+                    <p>
+                        Upload a customer transaction CSV to view customer data.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="customer-table-container analytics-hidden"
+                    id="customerTableContainer"
+                >
+
+                    <table class="customer-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Purchase Date
+                                </th>
+
+                                <th>
+                                    Amount
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="customerTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 BUSINESS INSIGHTS
+                 ========================================== -->
+
+            <div class="insights-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Business Insights
+                    </h2>
+
+                    <p>
+                        Key observations generated from customer analytics.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="insightsEmpty"
+                    class="empty-state"
+                >
+
+                    <strong>
+                        No insights available yet
+                    </strong>
+
+                    <p>
+                        Upload and analyze a dataset to generate business insights.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="insights-grid analytics-hidden"
+                    id="insightsContent"
+                >
+
+                    <div class="insight-card">
+
+                        <h3>
+                            Churn Risk Overview
+                        </h3>
+
+                        <p>
+                            Awaiting analysis.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <h3>
+                            Largest Customer Segment
+                        </h3>
+
+                        <p>
+                            Awaiting analysis.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <h3>
+                            Recommended Focus
+                        </h3>
+
+                        <p>
+                            Awaiting analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 UPLOAD DATASET
+                 ========================================== -->
+
+            <div
+                class="upload-section"
+                id="upload"
+            >
+
+                <div class="section-header">
+
+                    <h2>
+                        Upload Dataset
+                    </h2>
+
+                    <p>
+                        Upload your customer transaction CSV to begin analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <h3>
+                        Customer Transaction Dataset
+                    </h3>
+
+                    <p>
+                        Select a CSV file containing your retail transaction data.
+                    </p>
+
+
+                    <input
+                        type="file"
+                        id="csvFile"
+                        accept=".csv"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="uploadButton"
+                    >
+                        Analyze Dataset
+                    </button>
+
+
+                    <p id="uploadStatus"></p>
+
+
+                    <div
+                        id="analysisLoading"
+                        class="analysis-loading"
+                    >
+                        Analyzing dataset...
+                    </div>
+
+
+                    <div
+                        id="datasetSummary"
+                        class="dataset-summary"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 SEGMENTATION
+                 ========================================== -->
+
+            <div
+                class="segmentation-section"
+                id="segmentation"
+            >
+
+                <div class="section-header">
+
+                    <h2>
+                        Customer Segmentation
+                    </h2>
+
+                    <p>
+                        Understand your customers based on their purchasing behavior.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="segmentationEmpty"
+                    class="empty-state"
+                >
+
+                    <strong>
+                        No dataset analyzed yet
+                    </strong>
+
+                    <p>
+                        Upload a customer transaction CSV to view customer segments.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="segment-grid analytics-hidden"
+                    id="segmentContent"
+                >
+
+                    <div class="segment-card">
+
+                        <h3>
+                            Active / Regular
+                        </h3>
+
+                        <p>
+                            Awaiting analysis
+                        </p>
+
+                    </div>
+
+
+                    <div class="segment-card">
+
+                        <h3>
+                            Inactive / At Risk
+                        </h3>
+
+                        <p>
+                            Awaiting analysis
+                        </p>
+
+                    </div>
+
+
+                    <div class="segment-card">
+
+                        <h3>
+                            VIP / High Value
+                        </h3>
+
+                        <p>
+                            Awaiting analysis
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="chart-container analytics-hidden"
+                    id="segmentationChartSection"
+                >
+
+                    <div class="section-header">
+
+                        <h3>
+                            Customer Segment Distribution
+                        </h3>
+
+                        <p>
+                            Overview of customers across different segments.
+                        </p>
+
+                    </div>
+
+
+                    <div id="segmentationChart">
+
+                        <canvas id="segmentChart"></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 CHURN PREDICTION
+                 ========================================== -->
+
+            <div
+                class="churn-section"
+                id="churn"
+            >
+
+                <div class="section-header">
+
+                    <h2>
+                        Churn Prediction
+                    </h2>
+
+                    <p>
+                        Identify customers who may be at risk of leaving.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="churnEmpty"
+                    class="empty-state"
+                >
+
+                    <strong>
+                        No dataset analyzed yet
+                    </strong>
+
+                    <p>
+                        Upload a customer transaction CSV to view churn risk.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="churn-grid analytics-hidden"
+                    id="churnContent"
+                >
+
+                    <div class="churn-card">
+
+                        <h3>
+                            High Risk
+                        </h3>
+
+                        <p class="churn-number">
+                            0
+                        </p>
+
+                        <span>
+                            Customers
+                        </span>
+
+                    </div>
+
+
+                    <div class="churn-card">
+
+                        <h3>
+                            Medium Risk
+                        </h3>
+
+                        <p class="churn-number">
+                            0
+                        </p>
+
+                        <span>
+                            Customers
+                        </span>
+
+                    </div>
+
+
+                    <div class="churn-card">
+
+                        <h3>
+                            Low Risk
+                        </h3>
+
+                        <p class="churn-number">
+                            0
+                        </p>
+
+                        <span>
+                            Customers
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 CHURN CHART
+                 ========================================== -->
+
+            <div
+                class="chart-container analytics-hidden"
+                id="churnChartSection"
+            >
+
+                <div class="section-header">
+
+                    <h3>
+                        Churn Risk Distribution
+                    </h3>
+
+                    <p>
+                        Overview of customers based on the ML churn analysis.
+                    </p>
+
+                </div>
+
+
+                <div id="churnChartContainer">
+
+                    <canvas id="churnChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 NEXT BEST ACTION
+                 ========================================== -->
+
+            <div
+                class="nba-section"
+                id="nba"
+            >
+
+                <div class="section-header">
+
+                    <h2>
+                        Next Best Action
+                    </h2>
+
+                    <p>
+                        Recommended actions based on customer behavior and churn risk.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="nbaEmpty"
+                    class="empty-state"
+                >
+
+                    <strong>
+                        No dataset analyzed yet
+                    </strong>
+
+                    <p>
+                        Upload a customer transaction CSV to generate recommended actions.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="nba-grid analytics-hidden"
+                    id="nbaContent"
+                ></div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

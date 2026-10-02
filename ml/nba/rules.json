@@ -1,0 +1,16 @@
+{
+  "rules": [
+    {
+      "id": 1,
+      "name": "High Risk Win Back",
+      "conditions": {
+        "segment": "Inactive / At Risk",
+        "min_churn_probability": 0.7,
+        "risk_level": "High"
+      },
+      "action": "Win-back Campaign",
+      "priority": "High",
+      "reason": "Customer is at high risk of churn and belongs to an at-risk segment."
+    }
+  ]
+}

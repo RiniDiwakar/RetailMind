@@ -1,0 +1,2546 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2937;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #111827;
+    color: white;
+    padding: 28px 18px;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar a {
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 13px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #1f2937;
+    color: white;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.top-header {
+    background-color: white;
+    padding: 22px 32px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.top-header h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.content {
+    padding: 35px;
+}
+
+.content > h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.content > p {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+
+/* =========================================
+   COMMON SECTION
+========================================= */
+
+.section-header h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.section-header h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.section-header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   KPI CARDS
+========================================= */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.kpi-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 22px;
+    min-height: 130px;
+}
+
+.kpi-title {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.kpi-card h3 {
+    font-size: 28px;
+    color: #111827;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CUSTOMER OVERVIEW
+========================================= */
+
+.customer-section {
+    margin-top: 40px;
+}
+
+.customer-table-container {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.customer-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.customer-table th {
+    text-align: left;
+    padding: 15px 18px;
+    background-color: #f9fafb;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.customer-table td {
+    padding: 15px 18px;
+    color: #4b5563;
+    font-size: 14px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.customer-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+
+/* =========================================
+   BUSINESS INSIGHTS
+========================================= */
+
+.insights-section {
+    margin-top: 40px;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.insight-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.insight-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.insight-card p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   UPLOAD SECTION
+========================================= */
+
+.upload-section {
+    margin-top: 40px;
+}
+
+.upload-box {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 18px;
+}
+
+.upload-box h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.upload-box > p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.upload-box input[type="file"] {
+    display: block;
+    margin-bottom: 18px;
+}
+
+#uploadButton {
+    background-color: #111827;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#uploadButton:hover {
+    background-color: #1f2937;
+}
+
+#uploadStatus {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.status-info {
+    color: #6b7280;
+}
+
+.status-success {
+    color: #15803d !important;
+    font-weight: 600;
+}
+
+.status-error {
+    color: #dc2626 !important;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   DATASET SUMMARY
+========================================= */
+
+.dataset-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.summary-card {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.summary-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.summary-card strong {
+    font-size: 16px;
+    color: #111827;
+}
+
+
+/* =========================================
+   CUSTOMER SEGMENTATION
+========================================= */
+
+.segmentation-section {
+    margin-top: 40px;
+}
+
+.segment-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.segment-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 120px;
+}
+
+.segment-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.segment-card p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CHART CONTAINER
+========================================= */
+
+.chart-container {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.chart-container .section-header {
+    margin-bottom: 20px;
+}
+
+#segmentationChart {
+    min-height: 320px;
+    position: relative;
+}
+
+#segmentChart {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+
+/* =========================================
+   CHURN PREDICTION
+========================================= */
+
+.churn-section {
+    margin-top: 40px;
+}
+
+.churn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.churn-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 24px;
+    min-height: 145px;
+}
+
+.churn-card-header {
+    margin-bottom: 20px;
+}
+
+.risk-indicator {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.risk-indicator.high {
+    color: #b91c1c;
+    background-color: #fee2e2;
+}
+
+.risk-indicator.medium {
+    color: #b45309;
+    background-color: #fef3c7;
+}
+
+.risk-indicator.low {
+    color: #15803d;
+    background-color: #dcfce7;
+}
+
+.churn-number {
+    font-size: 18px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.churn-card > span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CHURN CHART
+========================================= */
+
+.churn-chart-section {
+    margin-top: 25px;
+}
+
+#churnChartContainer {
+    height: 330px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#churnChart {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+#churnAwaitingMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #6b7280;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   NEXT BEST ACTION
+========================================= */
+
+.nba-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.nba-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nba-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.nba-card h3 {
+    margin: 15px 0 8px;
+    font-size: 17px;
+}
+
+.nba-card p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.nba-risk {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.nba-risk.high {
+    color: #b91c1c;
+    background-color: #fee2e2;
+}
+
+.nba-risk.medium {
+    color: #b45309;
+    background-color: #fef3c7;
+}
+
+.nba-risk.low {
+    color: #15803d;
+    background-color: #dcfce7;
+}
+
+.recommended-action {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.recommended-action span {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.recommended-action strong {
+    font-size: 14px;
+    color: #111827;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .segment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nba-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .churn-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        position: static;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .segment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .churn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nba-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dataset-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+}
+/* ==========================================
+   ACTIVE SIDEBAR LINK
+   ========================================== */
+
+.sidebar nav a.active {
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+}
+/* ==========================================
+   RETAILMIND - PROFESSIONAL UI POLISH
+   ========================================== */
+
+/* ---------- General Section Spacing ---------- */
+
+.content > div,
+.content > section {
+    margin-top: 35px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2,
+.section-header h3 {
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* ---------- Dashboard Welcome ---------- */
+
+.content > h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.content > p {
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+
+/* ---------- KPI Cards ---------- */
+
+.kpi-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+.kpi-title {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.kpi-card h3 {
+    font-size: 28px;
+    color: #111827;
+}
+
+
+/* ---------- Upload Box ---------- */
+
+.upload-box {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.upload-box:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.upload-box input[type="file"] {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.upload-box button {
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.upload-box button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Dataset Summary ---------- */
+
+.dataset-summary {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.dataset-summary strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.dataset-summary p {
+    margin: 0;
+    color: #64748b;
+}
+
+
+/* ---------- Customer Table ---------- */
+
+.customer-table-container {
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.05);
+}
+
+.customer-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.customer-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.customer-table td {
+    color: #334155;
+}
+
+.customer-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.customer-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* ---------- Segment Cards ---------- */
+
+.segment-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.segment-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.segment-card h3 {
+    margin-bottom: 8px;
+}
+
+
+/* ---------- Chart Containers ---------- */
+
+.chart-container {
+    transition:
+        box-shadow 0.2s ease;
+}
+
+.chart-container:hover {
+    box-shadow:
+        0 8px 22px rgba(15, 23, 42, 0.07);
+}
+
+
+/* ---------- Churn Cards ---------- */
+
+.churn-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.churn-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+.churn-number {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* ---------- NBA Cards ---------- */
+
+.nba-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.nba-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+.nba-card h3 {
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+
+
+/* ---------- Insight Cards ---------- */
+
+.insight-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.insight-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ---------- Sidebar ---------- */
+
+.sidebar nav a {
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.sidebar nav a:hover {
+    padding-left: 22px;
+}
+
+.sidebar nav a.active {
+    padding-left: 22px;
+}
+
+
+/* ---------- Better Focus States ---------- */
+
+button:focus,
+input:focus,
+a:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+
+/* ---------- Mobile Polish ---------- */
+
+@media (max-width: 700px) {
+
+    .content > h2 {
+        font-size: 24px;
+    }
+
+    .content > p {
+        font-size: 14px;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .kpi-card h3 {
+        font-size: 24px;
+    }
+
+    .customer-table {
+        min-width: 650px;
+    }
+
+    .chart-container {
+        padding: 18px;
+    }
+}
+/* ==========================================
+   ANALYSIS LOADING STATE
+   ========================================== */
+
+.analysis-loading {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    color: #1d4ed8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.analysis-loading.show {
+    display: flex;
+}
+
+.loading-spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #bfdbfe;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: retailmind-spin 0.8s linear infinite;
+}
+
+@keyframes retailmind-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 30px 20px;
+    color: #64748b;
+}
+
+.empty-state strong {
+    display: block;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 14px;
+}
+/* ==========================================
+   ANALYTICS EMPTY STATES
+   ========================================== */
+
+.empty-state {
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    color: #64748b;
+}
+
+.empty-state strong {
+    display: block;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 14px;
+}
+/* ==========================================
+   ANALYTICS VISIBILITY
+   ========================================== */
+
+.analytics-hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   EMPTY STATES
+   ========================================== */
+
+.empty-state {
+    width: 100%;
+    margin: 10px 0 20px;
+    padding: 28px 20px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 12px;
+
+    color: #64748b;
+}
+
+
+.empty-state strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 16px;
+}
+
+
+.empty-state p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   ANALYSIS LOADING
+   ========================================== */
+
+.analysis-loading {
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 12px 16px;
+
+    text-align: center;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 8px;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.analysis-loading.show {
+    display: block;
+}
+
+
+/* ==========================================
+   CHART AREA
+   ========================================== */
+
+#segmentationChart,
+#churnChartContainer {
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ==========================================
+   NBA EMPTY LAYOUT
+   ========================================== */
+
+.nba-grid {
+    width: 100%;
+}
+
+
+/* ==========================================
+   MOBILE EMPTY STATE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .empty-state {
+        padding: 22px 15px;
+    }
+
+}
+/* ==========================================
+   FINAL KPI CARD POLISH
+   ========================================== */
+
+.kpi-grid {
+    gap: 20px;
+    margin-top: 28px;
+}
+
+
+.kpi-card {
+    position: relative;
+
+    padding: 24px 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    overflow: hidden;
+}
+
+
+/* Small accent line on top */
+
+.kpi-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #2563eb;
+}
+
+
+/* Different accent for each KPI */
+
+.kpi-card:nth-child(2)::before {
+    background: #7c3aed;
+}
+
+
+.kpi-card:nth-child(3)::before {
+    background: #059669;
+}
+
+
+.kpi-card:nth-child(4)::before {
+    background: #dc2626;
+}
+
+
+/* Hover effect */
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbd5e1;
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+
+/* KPI title */
+
+.kpi-title {
+    margin: 0 0 12px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* KPI number */
+
+.kpi-card h3 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* ==========================================
+   WELCOME SECTION POLISH
+   ========================================== */
+
+.welcome-section {
+    margin-bottom: 5px;
+}
+
+
+.welcome-section h2 {
+    margin-bottom: 3px;
+
+    color: #0f172a;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+.welcome-section p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   SECTION HEADER POLISH
+   ========================================== */
+
+.section-header h2 {
+    color: #0f172a;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.section-header h3 {
+    color: #0f172a;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+.section-header p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESPONSIVE KPI CARDS
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .kpi-card {
+        padding: 20px;
+    }
+
+
+    .kpi-card h3 {
+        font-size: 25px;
+    }
+
+
+    .welcome-section h2 {
+        font-size: 22px;
+    }
+
+}
+/* ==========================================
+   CUSTOMER TABLE POLISH
+   ========================================== */
+
+.customer-table-container {
+    margin-top: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+    overflow-x: auto;
+}
+
+
+/* Table */
+
+.customer-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+
+/* Table header */
+
+.customer-table thead {
+    background: #f8fafc;
+}
+
+
+.customer-table th {
+    padding: 15px 18px;
+
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* Table body */
+
+.customer-table td {
+    padding: 16px 18px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    transition: background 0.2s ease;
+}
+
+
+/* Remove border from last row */
+
+.customer-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Row hover */
+
+.customer-table tbody tr:hover td {
+    background: #f8fafc;
+}
+
+
+/* Customer ID */
+
+.customer-table td:first-child {
+    color: #2563eb;
+
+    font-weight: 600;
+}
+
+
+/* Amount */
+
+.customer-table td:last-child {
+    color: #0f172a;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   CUSTOMER SECTION SPACING
+   ========================================== */
+
+.customer-section {
+    margin-top: 38px;
+}
+
+
+.customer-section .section-header {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   MOBILE TABLE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .customer-table-container {
+        border-radius: 10px;
+    }
+
+    .customer-table th,
+    .customer-table td {
+        padding: 13px 14px;
+    }
+
+}
+/* ==========================================
+   CUSTOMER SEGMENTATION POLISH
+   ========================================== */
+
+.segmentation-section {
+    margin-top: 42px;
+}
+
+
+/* Segment cards container */
+
+.segment-grid {
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+
+/* Individual segment card */
+
+.segment-card {
+    position: relative;
+
+    padding: 22px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    overflow: hidden;
+}
+
+
+/* Top accent */
+
+.segment-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #2563eb;
+}
+
+
+/* Different accents */
+
+.segment-card:nth-child(2)::before {
+    background: #7c3aed;
+}
+
+
+.segment-card:nth-child(3)::before {
+    background: #dc2626;
+}
+
+
+.segment-card:nth-child(4)::before {
+    background: #059669;
+}
+
+
+.segment-card:nth-child(5)::before {
+    background: #64748b;
+}
+
+
+/* Hover */
+
+.segment-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbd5e1;
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Segment title */
+
+.segment-card h3 {
+    margin: 0 0 12px;
+
+    color: #334155;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+/* Segment count/text */
+
+.segment-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   SEGMENTATION CHART
+   ========================================== */
+
+.segmentation-section .chart-container {
+    margin-top: 25px;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+/* Chart heading spacing */
+
+.segmentation-section .chart-container .section-header {
+    margin-bottom: 15px;
+}
+
+
+/* Canvas sizing */
+
+#segmentationChart canvas {
+    width: 100% !important;
+
+    max-height: 330px;
+}
+
+
+/* ==========================================
+   SEGMENTATION RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+    .segment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .segmentation-section {
+        margin-top: 32px;
+    }
+
+    .segment-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .segmentation-section .chart-container {
+        padding: 18px;
+    }
+
+}
+/* ==========================================
+   CHURN PREDICTION POLISH
+   ========================================== */
+
+.churn-section {
+    margin-top: 42px;
+}
+
+
+/* Churn cards layout */
+
+.churn-grid {
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+/* Individual churn card */
+
+.churn-card {
+    position: relative;
+
+    padding: 24px 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    overflow: hidden;
+}
+
+
+/* Default accent */
+
+.churn-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #dc2626;
+}
+
+
+/* Medium Risk */
+
+.churn-card:nth-child(2)::before {
+    background: #d97706;
+}
+
+
+/* Low Risk */
+
+.churn-card:nth-child(3)::before {
+    background: #059669;
+}
+
+
+/* Hover */
+
+.churn-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbd5e1;
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Risk title */
+
+.churn-card h3 {
+    margin: 0 0 14px;
+
+    color: #334155;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+/* Customer number */
+
+.churn-card .churn-number {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* Customers label */
+
+.churn-card span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   CHURN CHART
+   ========================================== */
+
+#churnChartSection {
+    margin-top: 25px;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+/* Chart heading */
+
+#churnChartSection .section-header {
+    margin-bottom: 15px;
+}
+
+
+/* Chart sizing */
+
+#churnChartContainer {
+    width: 100%;
+
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+#churnChartContainer canvas {
+    width: 100% !important;
+
+    max-height: 330px;
+}
+
+
+/* ==========================================
+   CHURN RESPONSIVE
+   ========================================== */
+
+@media (max-width: 800px) {
+
+    .churn-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .churn-section {
+        margin-top: 32px;
+    }
+
+    .churn-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .churn-card {
+        padding: 20px;
+    }
+
+    .churn-card .churn-number {
+        font-size: 27px;
+    }
+
+    #churnChartSection {
+        padding: 18px;
+    }
+
+}
+/* ==========================================
+   NEXT BEST ACTION POLISH
+   ========================================== */
+
+.nba-section {
+    margin-top: 42px;
+}
+
+
+/* NBA cards grid */
+
+.nba-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+/* Individual NBA card */
+
+.nba-card {
+    position: relative;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    overflow: hidden;
+}
+
+
+/* Top accent */
+
+.nba-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #2563eb;
+}
+
+
+/* Risk-based accent */
+
+.nba-card.high-risk::before {
+    background: #dc2626;
+}
+
+
+.nba-card.medium-risk::before {
+    background: #d97706;
+}
+
+
+.nba-card.low-risk::before {
+    background: #059669;
+}
+
+
+/* Hover */
+
+.nba-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbd5e1;
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Customer name */
+
+.nba-card h3 {
+    margin: 0 0 8px;
+
+    color: #0f172a;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* Action */
+
+.nba-card .nba-action {
+    margin: 0 0 15px;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* Customer details */
+
+.nba-card p {
+    margin: 6px 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* Labels inside NBA cards */
+
+.nba-card strong {
+    color: #475569;
+
+    font-weight: 600;
+}
+
+
+/* Risk badge */
+
+.nba-risk {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* ==========================================
+   NBA RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+    .nba-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .nba-section {
+        margin-top: 32px;
+    }
+
+    .nba-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .nba-card {
+        padding: 20px;
+    }
+
+}
+/* ==========================================
+   BUSINESS INSIGHTS POLISH
+   ========================================== */
+
+.insights-section {
+    margin-top: 42px;
+}
+
+
+/* Insights grid */
+
+.insights-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+/* Individual insight card */
+
+.insight-card {
+    position: relative;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    overflow: hidden;
+}
+
+
+/* Top accent */
+
+.insight-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #2563eb;
+}
+
+
+/* Different accents */
+
+.insight-card:nth-child(2)::before {
+    background: #7c3aed;
+}
+
+
+.insight-card:nth-child(3)::before {
+    background: #059669;
+}
+
+
+/* Hover */
+
+.insight-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbd5e1;
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Insight heading */
+
+.insight-card h3 {
+    margin: 0 0 12px;
+
+    color: #334155;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* Insight content */
+
+.insight-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   INSIGHTS RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .insights-section {
+        margin-top: 32px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .insight-card {
+        padding: 20px;
+    }
+
+}
+/* ==========================================
+   RETAILMIND — FINAL UI POLISH
+   ========================================== */
+
+
+/* ==========================================
+   GLOBAL TYPOGRAPHY
+   ========================================== */
+
+body {
+    line-height: 1.5;
+}
+
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+
+/* ==========================================
+   SIDEBAR POLISH
+   ========================================== */
+
+.sidebar h2 {
+    letter-spacing: 0.3px;
+}
+
+
+.sidebar nav a {
+    border-radius: 8px;
+
+    margin-bottom: 4px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+.sidebar nav a:hover {
+    padding-left: 18px;
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.main-content {
+    min-width: 0;
+}
+
+
+.content {
+    max-width: 1500px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   UPLOAD SECTION
+   ========================================== */
+
+.upload-section {
+    margin-top: 42px;
+}
+
+
+.upload-box {
+    margin-top: 20px;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+.upload-box h3 {
+    margin-bottom: 8px;
+
+    color: #0f172a;
+
+    font-size: 18px;
+}
+
+
+.upload-box p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* File input */
+
+.upload-box input[type="file"] {
+    width: 100%;
+
+    margin: 16px 0;
+
+    padding: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+
+/* Analyze button */
+
+#uploadButton {
+    padding: 11px 20px;
+
+    background: #2563eb;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#uploadButton:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+
+#uploadButton:active {
+    transform: translateY(0);
+}
+
+
+#uploadButton:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+/* ==========================================
+   UPLOAD STATUS
+   ========================================== */
+
+.status-info,
+.status-success,
+.status-error {
+    margin-top: 12px;
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.status-info {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+.status-success {
+    background: #f0fdf4;
+
+    color: #15803d;
+}
+
+
+.status-error {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+/* ==========================================
+   DATASET SUMMARY
+   ========================================== */
+
+.dataset-summary {
+    margin-top: 18px;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   SECTION SPACING
+   ========================================== */
+
+.customer-section,
+.insights-section,
+.segmentation-section,
+.churn-section,
+.nba-section {
+    scroll-margin-top: 25px;
+}
+
+
+/* ==========================================
+   SMOOTH CARD TRANSITIONS
+   ========================================== */
+
+.kpi-card,
+.segment-card,
+.churn-card,
+.nba-card,
+.insight-card {
+    will-change: transform;
+}
+
+
+/* ==========================================
+   EMPTY STATE POLISH
+   ========================================== */
+
+.empty-state {
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.empty-state:hover {
+    background: #f8fafc;
+
+    border-color: #94a3b8;
+}
+
+
+/* ==========================================
+   MOBILE POLISH
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .top-header {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+
+    .upload-box {
+        padding: 20px;
+    }
+
+
+    .section-header h2 {
+        font-size: 19px;
+    }
+
+
+    .section-header p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   VERY SMALL SCREENS
+   ========================================== */
+
+@media (max-width: 450px) {
+
+    .content {
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .upload-box {
+        padding: 17px;
+    }
+
+
+    #uploadButton {
+        width: 100%;
+    }
+
+}
